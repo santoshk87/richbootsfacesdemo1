@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+
+xmlns:h="http://java.sun.com/jsf/html"
+
+xmlns:f="http://java.sun.com/jsf/core"
+
+xmlns:ui="http://java.sun.com/jsf/facelets"
+
+xmlns:a4j="http://richfaces.org/a4j"
+
+xmlns:rich="http://richfaces.org/rich">
+
+
+
+ 
+
+<h:head>
+
+<h:outputStylesheet>
+
+        .red {
+
+            color: red;
+
+        }
+
+ 
+
+        .green {
+
+            color: green;
+
+        }
+
+    </h:outputStylesheet>
+
+</h:head>
+
+<h:body>
+
+<h:form >
+
+<rich:graphValidator value="#{registerController}" id="gv">
+
+
+
+<rich:panel header="Profile Access Rights" style="width:95%;">
+
+<h:panelGrid rows="6">
+
+
+
+
+<rich:messages globalOnly="true" />
+
+
+
+<h:outputText value="Organization Type" />
+
+<rich:select>
+
+
+
+  	<f:selectItems value="#{listSelectBean.organisationTypes}" />
+
+
+
+</rich:select>
+
+
+
+<rich:messages globalOnly="true" />
+
+
+
+<h:outputText value="Agents" />
+
+
+<rich:select>
+
+
+
+  	<f:selectItems value="#{listSelectBean.agents}" />
+
+
+
+</rich:select>
+
+
+
+<rich:messages globalOnly="true" />
+
+
+
+<h:outputText value="Items Group" />
+
+<rich:select>
+
+
+
+  	<f:selectItems value="#{listSelectBean.itemsGroup}" />
+
+
+
+</rich:select>
+
+
+
+</h:panelGrid>
+
+
+
+
+  <h:panelGrid columns="2" >
+
+        
+
+        <rich:pickList value="#{listSelectBean.selectedActions}"> 
+
+            <f:selectItems value="#{listSelectBean.actions}"/>
+
+        </rich:pickList>
+
+        
+
+        <rich:panel id="result" bodyClass="pbody">
+
+            <rich:list value="#{listSelectBean.selectedActions}" var="selectedAction" rendered="#{listSelectBean.selectedActions>0}"> 
+
+                    <h:outputText value="#{selectedAction}"/>
+
+            </rich:list> 
+
+        </rich:panel>
+
+
+
+
+
+    </h:panelGrid>
+
+    </rich:panel>
+
+    
+
+
+
+</rich:graphValidator>
+
+<a4j:commandButton value="Register"
+
+action="#{registerController.addUser}" />
+
+</h:form>
+
+
+
+</h:body>
+
+</html>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Home page</title>
+	<meta name="author" content="Riccardo Massera"></meta>
+	<style type="text/css">
+
+</style>
+</h:head>
+<h:body style="background-color: #add;">
+	<b:container>
+		<h:form styleClass="form-signin" prependId="false">
+
+				<b:navBar brand="Home" brandHref="#">
+    	 <b:navbarLinks>
+         <b:navLink value="Manage Accounts" href="#"></b:navLink>
+         <b:navLink value="Add Account" href="#"></b:navLink>
+         <b:dropMenu value="View" iconAwesome="birthday-cake">
+             <b:navLink value="Accounts" href="./AccountList.xhtml"></b:navLink>
+             <b:navLink value="Users" href="#"></b:navLink>
+             <b:navLink value="Transactions" href="#"></b:navLink>
+             <b:navLink></b:navLink>
+            
+             <b:dropMenu value="Nested submenu" iconAwesome="birthday-cake" iconAlign="right">
+                 <b:navLink value="You can nest menus" href="#"></b:navLink>
+                 <b:dropMenu value="Nested sub-submenu">
+                     <b:navLink value="... as deep as ..." href="#"></b:navLink>
+                     <b:dropMenu value="Nested sub-sub-submenu">
+                         <b:navLink value="... you want!" href="#"></b:navLink>
+                     </b:dropMenu>
+                 </b:dropMenu>
+ 
+             </b:dropMenu>
+         </b:dropMenu>
+     </b:navbarLinks>
+     <form class="navbar-form navbar-left hidden-md hidden-sm hidden-xs" role="search">
+         <div class="form-group">
+             <input type="text" class="form-control" placeholder="Search Account"/>
+         </div>
+         <button type="submit" class="btn btn-default">Submit</button>
+     </form>
+     <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
+   
+ </b:navBar>
+		</h:form>
+	</b:container>
+</h:body>
+</html>

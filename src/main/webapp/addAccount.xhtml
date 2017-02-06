@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Add Account</title>
+	<meta name="author" content="Riccardo Massera"></meta>
+	<style type="text/css">
+.form-signin {
+	margin: 0 auto;
+	max-width: 330px;
+	padding: 15px;
+}
+</style>
+</h:head>
+<h:body style="padding-top: 60px; background-color: #add;">
+	<b:container>
+		<h:form styleClass="form-signin" prependId="false">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<b:inputText id="name" placeholder="Name">
+				<f:facet name="prepend">
+					<b:icon name="user" />
+				</f:facet>
+			</b:inputText>
+			<b:inputText id="cardnumber" placeholder="card number" >
+				
+			</b:inputText>
+				<b:inputText id="validity" placeholder="Validity" >
+				
+			</b:inputText>
+			
+			
+				<b:selectOneMenu value="#{listSelectBean.loggedInUser}" >
+				 <f:selectItems value="#{listSelectBean.loginType}" />
+				
+    </b:selectOneMenu>
+			<b:selectBooleanCheckbox value="true" caption="remember me" />
+			<b:button look="primary btn-block" value="Create"
+				 outcome="HomePage.xhtml"   />
+				
+				
+					
+		</h:form>
+	</b:container>
+</h:body>
+</html>
